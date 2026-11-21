@@ -1,0 +1,211 @@
+:root {
+  --product: #2563eb;
+  --management: #7c3aed;
+  --design: #db2777;
+  --development: #0f766e;
+  --quality: #ea580c;
+  --operations: #0284c7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: #111827;
+}
+
+.team-map {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.team-card {
+  --accent: #475467;
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-top: 4px solid var(--accent);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-card[data-team="product"] { --accent: var(--product); }
+.team-card[data-team="management"] { --accent: var(--management); }
+.team-card[data-team="design"] { --accent: var(--design); }
+.team-card[data-team="development"] { --accent: var(--development); }
+.team-card[data-team="quality"] { --accent: var(--quality); }
+.team-card[data-team="operations"] { --accent: var(--operations); }
+
+.team-card:hover,
+.team-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(17, 24, 39, 0.08);
+}
+
+.team-card__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.team-card__icon {
+  font-size: 15px;
+}
+
+.team-card__direction {
+  margin: 0 0 3px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.team-card p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #4b5563;
+}
+
+.team-card details {
+  margin-top: 16px;
+  border: 1px solid #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.team-card summary {
+  cursor: pointer;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.team-card details[open] {
+  background: #f9fafb;
+  border-color: var(--accent);
+}
+
+.team-card ul {
+  margin: 0;
+  padding: 4px 12px 12px 26px;
+  font-size: 12px;
+  color: #374151;
+}
+
+.cases-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.case-card {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-top: 4px solid #db2777;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(17, 24, 39, 0.05);
+}
+
+.case-card__id {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #db2777;
+}
+
+.role-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+}
+
+.role-tags li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fdf2f8;
+  color: #be185d;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.case-card details {
+  margin-top: 14px;
+  border: 1px solid #f3f4f6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.case-card summary {
+  cursor: pointer;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.case-card details[open] {
+  background: #fdf2f8;
+}
+
+.case-card ol {
+  margin: 0;
+  padding: 4px 12px 12px 28px;
+  font-size: 12px;
+  color: #374151;
+}
+
+@media (max-width: 820px) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cases-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
